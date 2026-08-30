@@ -1,0 +1,18 @@
+# Copyrighted ROM images and emulator/runtime artifacts
+*.nes
+*.fds
+*.sav
+*.srm
+*.mss
+*.state
+*.avi
+*.mp4
+
+# Local builds and tooling
+build/
+roms/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
