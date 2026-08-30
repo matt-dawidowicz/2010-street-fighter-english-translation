@@ -1,0 +1,26 @@
+STREET FIGHTER 2010 - V9 TRANSLATION NOTES
+
+Principles
+- Japanese game script remains the primary source.
+- The Japanese manual is used as canonical terminology/context, not as license to add story material absent from the game.
+- Natural English is preferred when it does not change meaning.
+- Original utterance boundaries, quote controls, pauses, and renderer scrolling behavior are preserved.
+
+Manual-confirmed terminology
+- Parasite
+- Armored Insect
+- Galaxy Police
+- Open Power
+- Dimensional Door
+- Flip Shield
+
+Key prose revisions
+- 'made by' -> 'built by the Galaxy Police' in the Ballantine-type reveal.
+- Dagobah instruction now reads 'you'll be one step closer to perfection,' matching the Japanese wording and Jose's perfection motif.
+- Kevin's pain dialogue consistently retains 'pain' as a repeated story motif.
+- Jose's pore/body explanation is rendered as a concrete biological invasion rather than vague armor language.
+- Final mission briefing uses 'exterminate,' 'Open Power,' and 'Dimensional Door' in line with the Japanese text/manual.
+- 'Me... a Parasite...?' restores the clipped shock of Japanese 'ore... parasite...?' rather than expanding it into a full sentence.
+
+Unresolved proper noun
+- BALLANTINE-TYPE remains the best-supported reading of バランタイン型. The manual does not supply a Latin spelling.
