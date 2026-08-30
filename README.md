@@ -29,7 +29,7 @@ The stock text system is tile-based and was not designed for English contraction
 
 No ROM image is included in this repository.
 
-Use the BPS patch in `release/` with a clean copy of the Japanese Famicom ROM.
+The public v1.0 release is distributed as a BPS patch. `release/README.txt` records the supported source/target hashes and patching instructions. The binary BPS itself is distributed separately from the source repository.
 
 Supported source ROM SHA-256:
 
@@ -43,32 +43,21 @@ Expected translated ROM SHA-256:
 2a79d8be801178cc46ee859009df906c3f1fe48d58ba126aba806303d64c8c5d
 ```
 
-You can use Floating IPS (Flips), or the included dependency-free Python BPS applier:
+The included `tools/apply_bps.py` and `tools/verify_release.py` can be used locally once the v1.0 BPS file is placed at:
 
-```bash
-python tools/apply_bps.py \
-  "Street Fighter 2010 (Japan).nes" \
-  release/2010_Street_Fighter_English_Translation_v1.0.bps \
-  "2010 Street Fighter (English v1.0).nes"
-```
-
-To verify the release against the supported source ROM:
-
-```bash
-python tools/verify_release.py "Street Fighter 2010 (Japan).nes"
+```text
+release/2010_Street_Fighter_English_Translation_v1.0.bps
 ```
 
 ## Repository layout
 
-- `release/` — public BPS patch
+- `release/` — release notes / patch metadata
 - `src/history/` — retained development-stage patch/build scripts
-- `docs/` — final script, layout audits, and translation notes
+- `docs/` — final script and translation documentation
 - `experiments/` — abandoned post-v1.0 experiments, not part of the release
-- `tools/` — generic release application/verification tooling
+- `tools/` — BPS application/verification tooling
 
 ## Development history
-
-The retained code reflects the project's late-stage development sequence:
 
 - **V8 / RC4:** dialogue-system rebuild and English typography support
 - **V9 / RC5:** final prose pass and packed dialogue rebuild
@@ -78,7 +67,7 @@ The retained code reflects the project's late-stage development sequence:
 - **V12 / RC9:** final v1.0 apostrophe glyph used by the release
 - **V13 / RC10:** experimental contraction ligatures; rejected and not released
 
-Some earlier exploratory stages predated the retained source snapshot. The public v1.0 BPS patch plus `tools/apply_bps.py` provides a deterministic clean-ROM-to-release path, while the retained late-stage scripts document the semantic text/renderer work that produced the release.
+Some earlier exploratory stages predated the retained source snapshot. The retained late-stage scripts document the semantic text/renderer work that produced the release.
 
 ## Credits
 
