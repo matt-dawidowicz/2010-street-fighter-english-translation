@@ -2,9 +2,9 @@
 
 A faithful English translation of the original Japanese Famicom version of **2010 Street Fighter**.
 
-The official North American release substantially rewrote the game's story to connect it more directly to the Street Fighter series. This project instead preserves the Japanese continuity: **Kevin Straker**, the **Parasites**, **Armored Insects**, the **Galaxy Police**, and the original terminology and plot structure.
+The official North American release substantially rewrote the game's story to connect it more directly to the Street Fighter series. This project instead preserves the Japanese continuity: **Kevin Striker**, the **Parasites**, **Armored Insects**, the **Galaxy Police**, and the original terminology and plot structure.
 
-The English script was informed by the translation documented on **The Cutting Room Floor (TCRF)**, then checked against the Japanese game and manual and edited for natural English while preserving the original meaning.
+The English script was informed by the translation documented on **The Cutting Room Floor (TCRF)**, then checked against the Japanese game and original manual/transcripts and edited for natural English while preserving the original meaning. Kevin's surname is rendered **Striker**, following Capcom's later official English Character Guide.
 
 ## v1.01
 
@@ -16,7 +16,7 @@ Version 1.01 is a maintenance release built on the fully playtested **V12 / RC9*
 - Corrects Dr. Jose's final-confrontation boast so his self-reference is clear in English: **"I, Dr. Jose"**.
 - Restores the forceful **"I'll test it on your body!"** wording in Jose's final line.
 
-The corrections were checked against the Japanese in-game text and the original manual transcription. The v1.01 build deliberately reuses the stable v1.0 renderer and keeps the rejected V13 / RC10 apostrophe-ligature experiment out of the release path.
+The corrections were checked against the Japanese in-game text and the original manual transcription. Source references include the HZK reproduction/transcription of the Japanese manual and demo text (`https://www.ne.jp/asahi/hzk/kommander/2010top.html`) and Capcom's official English Kevin Striker profile (`https://game.capcom.com/cfn/sfv/column/130987?lang=en`). The v1.01 build deliberately reuses the stable v1.0 renderer and keeps the rejected V13 / RC10 apostrophe-ligature experiment out of the release path.
 
 ### Features
 
