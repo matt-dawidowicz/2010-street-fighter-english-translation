@@ -1,0 +1,37 @@
+STREET FIGHTER 2010 - v1.01 TRANSLATION NOTES
+
+Scope
+- v1.01 is a narrow maintenance release based on the stable V12 / RC9 v1.0 build.
+- The Japanese in-game script remains the primary source.
+- The original Japanese manual/transcription is used for canonical terminology and context.
+- No broad prose rewrite was performed after the source audit.
+
+Manual-confirmed terminology retained
+- Parasite
+- Armored Insect
+- Galaxy Police
+- Open Power
+- Dimensional Door
+- Flip Shield
+- Dagobah remains the intended planet spelling; the game's planet names deliberately include Star Wars references such as Tatooine and Dagobah.
+
+v1.01 corrections
+1. Record 5
+   v1.0: EQUIP IT, AND YOU'LL BE ONE STEP CLOSER TO PERFECTION...
+   v1.01: EQUIP IT, AND YOUR STRENGTH WILL COME ONE STEP CLOSER TO PERFECTION...
+   Reason: restores the explicit Japanese reference to Kevin's strength approaching perfection.
+
+2. Record 10
+   v1.0: THAT'S RIGHT. OF ALL THE PARASITES CREATED BY DR. JOSE, YOU ARE THE GREATEST.
+   v1.01: THAT'S RIGHT. YOU ARE THE GREATEST PARASITE THAT I, DR. JOSE, HAVE CREATED.
+   Reason: Jose is the speaker. The Japanese uses a grandiose self-reference equivalent to "this Dr. Jose"; the v1.0 third-person English obscured that fact.
+
+3. Record 20
+   v1.0: KEVIN! LET ME TEST IT ON YOUR BODY!
+   v1.01: KEVIN! I'LL TEST IT ON YOUR BODY!
+   Reason: restores the assertive force of Jose's Japanese declaration rather than making it sound like a request for permission.
+
+Audit result
+- All other release dialogue and the opening crawl were left unchanged.
+- Record 14 was rechecked and retained: its v1.0 wording accurately reflects the Japanese.
+- BALLANTINE-TYPE remains the best-supported reading of バランタイン型; the manual does not supply a Latin spelling.

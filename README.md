@@ -6,9 +6,17 @@ The official North American release substantially rewrote the game's story to co
 
 The English script was informed by the translation documented on **The Cutting Room Floor (TCRF)**, then checked against the Japanese game and manual and edited for natural English while preserving the original meaning.
 
-## v1.0
+## v1.01
 
-Version 1.0 corresponds to the fully playtested **V12 / RC9** build. A later V13 / RC10 apostrophe-ligature experiment introduced runtime regressions and was rejected; it remains under `experiments/` for historical reference only.
+Version 1.01 is a maintenance release built on the fully playtested **V12 / RC9** v1.0 release. It changes only three audited dialogue lines; gameplay code, renderer fixes, graphics, and the rest of the English script are unchanged.
+
+### v1.01 script corrections
+
+- Restores the explicit **"your strength"** wording in the Dagobah instruction.
+- Corrects Dr. Jose's final-confrontation boast so his self-reference is clear in English: **"I, Dr. Jose"**.
+- Restores the forceful **"I'll test it on your body!"** wording in Jose's final line.
+
+The corrections were checked against the Japanese in-game text and the original manual transcription. The v1.01 build deliberately reuses the stable v1.0 renderer and keeps the rejected V13 / RC10 apostrophe-ligature experiment out of the release path.
 
 ### Features
 
@@ -19,11 +27,11 @@ Version 1.0 corresponds to the fully playtested **V12 / RC9** build. A later V13
 - English quotation marks and punctuation support
 - Cursor and long-dialogue renderer fixes
 - Selected technical fixes from the U.S. release carried back where appropriate
-- Full start-to-finish playtesting
+- Full start-to-finish playtesting of the v1.0 baseline
 
 ### Known cosmetic quirk
 
-The original text renderer is tile-based and was not designed for English contractions. Apostrophes therefore have slightly unusual spacing in some words. This is cosmetic only. The v1.0 release keeps the stable V12 / RC9 implementation rather than the rejected ligature experiment.
+The original text renderer is tile-based and was not designed for English contractions. Apostrophes therefore have slightly unusual spacing in some words. This is cosmetic only. The release keeps the stable V12 / RC9 implementation rather than the rejected ligature experiment.
 
 ## Applying the patch
 
@@ -32,7 +40,7 @@ No ROM image is included. You must supply a clean, unmodified copy of the suppor
 Patch file:
 
 ```text
-release/2010_Street_Fighter_English_Translation_v1.0.bps
+release/2010_Street_Fighter_English_Translation_v1.01.bps
 ```
 
 Supported source ROM SHA-256:
@@ -44,7 +52,7 @@ Supported source ROM SHA-256:
 Expected translated ROM SHA-256:
 
 ```text
-2a79d8be801178cc46ee859009df906c3f1fe48d58ba126aba806303d64c8c5d
+66aff12851c2328a54da8c1dfaaa654235d50c2eb5c167feb769abdcb48b6f55
 ```
 
 You can apply the BPS patch with any compatible patcher, or use the included dependency-free Python tool:
@@ -52,8 +60,8 @@ You can apply the BPS patch with any compatible patcher, or use the included dep
 ```bash
 python tools/apply_bps.py \
   "Street Fighter 2010 (Japan).nes" \
-  release/2010_Street_Fighter_English_Translation_v1.0.bps \
-  "2010 Street Fighter (English v1.0).nes"
+  release/2010_Street_Fighter_English_Translation_v1.01.bps \
+  "2010 Street Fighter (English v1.01).nes"
 ```
 
 To verify the complete clean-ROM-to-release path:
@@ -62,15 +70,21 @@ To verify the complete clean-ROM-to-release path:
 python tools/verify_release.py "Street Fighter 2010 (Japan).nes"
 ```
 
-The verifier checks the supported source SHA-256, applies the included BPS patch, and confirms the expected translated-ROM SHA-256.
+The verifier checks the supported source SHA-256, applies the included v1.01 BPS patch, and confirms the expected translated-ROM SHA-256.
+
+To reproduce the maintenance build and BPS patch from a clean source ROM and the checked-in v1.0 baseline patch:
+
+```bash
+python tools/build_v101.py "Street Fighter 2010 (Japan).nes"
+```
 
 ## Repository layout
 
-- `release/` — v1.0 BPS patch and release notes
-- `docs/` — final script and translation notes
-- `src/history/` — retained late-stage build and patch scripts
+- `release/` — v1.01 BPS patch, retained v1.0 patch, and release notes
+- `docs/` — final scripts, translation notes, and the v1.01 build audit
+- `src/history/` — retained late-stage v1.0 build and patch scripts
 - `experiments/` — rejected post-v1.0 experiments; not release inputs
-- `tools/` — dependency-free BPS application and release-verification utilities
+- `tools/` — dependency-free BPS application, v1.01 build, and release-verification utilities
 - `HISTORY.md` — concise development-stage history
 
 ## Development history
@@ -82,8 +96,9 @@ The verifier checks the supported source SHA-256, applies the included BPS patch
 - **V11 / RC8:** U.S.-style post-scroll behavior and temporary apostrophe experiment
 - **V12 / RC9:** final v1.0 apostrophe implementation
 - **V13 / RC10:** contraction-ligature experiment; rejected and not released
+- **v1.01:** source-audited maintenance correction to Records 5, 10, and 20 only
 
-Some earlier exploratory stages predate the retained source snapshot. The checked-in v1.0 BPS patch is the canonical public release artifact; the retained scripts document the late-stage text and renderer work that produced it.
+Some earlier exploratory stages predate the retained source snapshot. The checked-in v1.01 BPS patch is the canonical current release artifact; v1.0 is retained for historical reproducibility.
 
 ## Credits
 

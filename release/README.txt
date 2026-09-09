@@ -1,6 +1,6 @@
 2010 STREET FIGHTER
 Faithful English Retranslation
-Version 1.0
+Version 1.01
 
 OVERVIEW
 --------
@@ -19,7 +19,18 @@ natural English without intentionally changing the original meaning.
 
 RELEASE STATUS
 --------------
-v1.0 is the fully playtested V12 / RC9 build.
+v1.01 is a maintenance release built on the fully playtested V12 / RC9 v1.0
+baseline. Gameplay code, renderer fixes, graphics, and all dialogue other than
+the three corrections below are unchanged.
+
+V1.01 SCRIPT CORRECTIONS
+------------------------
+- Record 5 restores the explicit "your strength" wording in the Dagobah scene.
+- Record 10 makes Dr. Jose's self-reference unambiguous: "I, Dr. Jose".
+- Record 20 restores the forceful "I'll test it on your body!" wording.
+
+These changes were checked against the Japanese in-game text and original
+manual transcription.
 
 A later V13 / RC10 experiment attempted to combine apostrophes with preceding
 letters to improve contraction spacing. It caused runtime regressions and was
@@ -35,14 +46,15 @@ FEATURES
 - English quotation marks and punctuation support
 - Cursor and long-dialogue renderer fixes
 - Selected technical fixes from the U.S. release carried back where appropriate
-- Full start-to-finish playtesting
+- Full start-to-finish playtesting of the v1.0 baseline
 
 PATCH CONTENTS
 --------------
 Patch format: BPS
-Patch file: 2010_Street_Fighter_English_Translation_v1.0.bps
+Patch file: 2010_Street_Fighter_English_Translation_v1.01.bps
 
-No ROM image is included.
+The previous v1.0 patch is retained in the repository for historical
+reproducibility. No ROM image is included.
 
 SUPPORTED SOURCE
 ----------------
@@ -53,7 +65,10 @@ Source ROM SHA-256:
 2189de9029ec706edd8b6bbd67d66925fdd363c7d00149fabf113c8fd3cf0e0a
 
 Expected translated ROM SHA-256:
-2a79d8be801178cc46ee859009df906c3f1fe48d58ba126aba806303d64c8c5d
+66aff12851c2328a54da8c1dfaaa654235d50c2eb5c167feb769abdcb48b6f55
+
+v1.01 BPS SHA-256:
+bcaea7f01e331b1027a98dda123b2f23834450a268d9b6611445ef36b12d79d7
 
 PATCHING
 --------
@@ -62,18 +77,23 @@ included in the repository:
 
   python tools/apply_bps.py \
     "Street Fighter 2010 (Japan).nes" \
-    release/2010_Street_Fighter_English_Translation_v1.0.bps \
-    "2010 Street Fighter (English v1.0).nes"
+    release/2010_Street_Fighter_English_Translation_v1.01.bps \
+    "2010 Street Fighter (English v1.01).nes"
 
 To validate the supported source and resulting translated ROM:
 
   python tools/verify_release.py "Street Fighter 2010 (Japan).nes"
 
+To reproduce the v1.01 ROM and BPS from the clean source plus the retained v1.0
+baseline patch:
+
+  python tools/build_v101.py "Street Fighter 2010 (Japan).nes"
+
 KNOWN QUIRK
 -----------
 The original text renderer is tile-based and was not designed for English
 contractions. Apostrophes can therefore have slightly unusual spacing. This is
-a cosmetic limitation of the stable v1.0 implementation.
+a cosmetic limitation of the stable V12 / RC9 implementation.
 
 CREDITS
 -------
