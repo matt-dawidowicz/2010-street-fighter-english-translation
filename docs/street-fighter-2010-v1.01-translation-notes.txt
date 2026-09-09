@@ -31,7 +31,14 @@ v1.01 corrections
    v1.01: KEVIN! I'LL TEST IT ON YOUR BODY!
    Reason: restores the assertive force of Jose's Japanese declaration rather than making it sound like a request for permission.
 
+Proper-name policy
+- Kevin's surname is rendered STRIKER in project documentation, following Capcom's later official English Character Guide. The Japanese name is ケビン・ストレイカー. The surname does not occur in the in-game dialogue, so this is a documentation/canon-style choice rather than a ROM-script change.
+- BALLANTINE-TYPE remains the best-supported reading of バランタイン型; the manual does not supply a Latin spelling.
+
+Source references
+- Japanese manual and demo transcription hub: https://www.ne.jp/asahi/hzk/kommander/2010top.html
+- Capcom official English Kevin Striker profile: https://game.capcom.com/cfn/sfv/column/130987?lang=en
+
 Audit result
 - All other release dialogue and the opening crawl were left unchanged.
 - Record 14 was rechecked and retained: its v1.0 wording accurately reflects the Japanese.
-- BALLANTINE-TYPE remains the best-supported reading of バランタイン型; the manual does not supply a Latin spelling.
