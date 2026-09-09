@@ -9,13 +9,15 @@ Famicom version of 2010 Street Fighter.
 
 The official North American release substantially rewrote the story to tie the
 game more directly to the Street Fighter series. This translation preserves
-the Japanese continuity instead: Kevin Straker remains the protagonist, and
+the Japanese continuity instead: Kevin Striker remains the protagonist, and
 the Parasites, Armored Insects, Galaxy Police, and original terminology are
 retained.
 
 The English script was informed by the translation documented on The Cutting
-Room Floor (TCRF), checked against the Japanese game and manual, and edited for
-natural English without intentionally changing the original meaning.
+Room Floor (TCRF), checked against the Japanese game and original manual/demo
+transcripts, and edited for natural English without intentionally changing the
+original meaning. Kevin's surname follows Capcom's later official English
+rendering, Kevin Striker.
 
 RELEASE STATUS
 --------------
@@ -30,7 +32,10 @@ V1.01 SCRIPT CORRECTIONS
 - Record 20 restores the forceful "I'll test it on your body!" wording.
 
 These changes were checked against the Japanese in-game text and original
-manual transcription.
+manual transcription. Primary online references used for this maintenance audit:
+
+  https://www.ne.jp/asahi/hzk/kommander/2010top.html
+  https://game.capcom.com/cfn/sfv/column/130987?lang=en
 
 A later V13 / RC10 experiment attempted to combine apostrophes with preceding
 letters to improve contraction spacing. It caused runtime regressions and was
