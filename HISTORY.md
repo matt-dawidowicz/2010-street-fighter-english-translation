@@ -1,23 +1,25 @@
-# Development Notes
+# Changelog
 
-This repository intentionally preserves both the shipped v1.0 path, the v1.01 maintenance release, and the late abandoned experiment that followed v1.0.
+## v1.01 — current release
 
-## v1.01 maintenance release
-
-v1.01 keeps the complete V12 / RC9 v1.0 runtime baseline and changes only three source-audited dialogue records:
+v1.01 is a source-audited maintenance update to v1.0. It changes only three dialogue records:
 
 - Record 5 restores the explicit "your strength" wording in the Dagobah instruction.
-- Record 10 restores Jose's first-person self-reference: "I, Dr. Jose".
+- Record 10 restores Dr. Jose's first-person self-reference: "I, Dr. Jose".
 - Record 20 restores the assertive "I'll test it on your body!" wording.
 
-The maintenance builder leaves Record 11 byte-identical, preserves the V10/V11/V12 renderer fixes, and relocates only the enlarged Record 5 into unused packed-dialogue space.
+The update preserves the established renderer behavior, Record 11 long-dialogue handling, cursor behavior, graphics, and gameplay code. Record 5 is relocated into unused dialogue space because the corrected line is longer; Records 10 and 20 remain within their existing allocations.
 
-## v1.0 release baseline
+## v1.0
 
-**v1.0 = normal RC9 / V12 behavior**
+Initial public translation release. This established the complete English script, opening crawl, English punctuation support, dialogue layout, long-text scrolling fixes, and the stable fixed-width apostrophe implementation used by v1.01.
 
-The final v1.0 release keeps the corrected Record 11 scrolling/post-scroll behavior and cursor restoration. It also uses a dedicated white apostrophe tile. The resulting contraction spacing is slightly unusual but stable and readable.
+The v1.0 runtime baseline was playtested from start to finish.
 
-## Rejected V13 / RC10 experiment
+## Renderer note
 
-The ligature experiment attempted to combine `T'`, `I'`, `U'`, and `N'` into single glyphs to remove the extra fixed-width apostrophe cell. Although promising in isolated tests, it produced regressions in the real game and was abandoned. Files under `experiments/` are historical only and must not be treated as release inputs.
+The original text engine allocates a full character cell to apostrophes. The North American release uses the same basic fixed-width approach, so slightly unusual contraction spacing is an engine limitation rather than a translation defect. A custom ligature experiment was tested during development but rejected after runtime regressions.
+
+## Repository maintenance
+
+The active tree now contains only current release documentation and tooling. Superseded V9 documents, old stage-specific patch scripts, and rejected experimental code were removed after v1.01. They remain recoverable from Git history.

@@ -18,16 +18,19 @@ Record 5:
   IT, AND YOUR STRENGTH
   WILL COME ONE STEP
   CLOSER TO PERFECTION...
+
 Record 10:
   THAT'S RIGHT. YOU ARE
   THE GREATEST PARASITE
   THAT I, DR. JOSE, HAVE
   CREATED.
+
 Record 20:
   KEVIN! I'LL TEST IT ON
   YOUR BODY!
 
 Record 11 byte identity: PASS
-V10/V11/V12 renderer-fix invariants: PASS
+stable renderer invariants: PASS
+fixed-width apostrophe-cell invariant: PASS
 unrelated pointer identity: PASS
 clean-source BPS round trip: PASS

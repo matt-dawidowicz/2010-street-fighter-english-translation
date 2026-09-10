@@ -7,65 +7,51 @@ OVERVIEW
 This patch provides a faithful English translation of the original Japanese
 Famicom version of 2010 Street Fighter.
 
-The official North American release substantially rewrote the story to tie the
-game more directly to the Street Fighter series. This translation preserves
-the Japanese continuity instead: Kevin Striker remains the protagonist, and
-the Parasites, Armored Insects, Galaxy Police, and original terminology are
-retained.
+The North American release rewrote the story to connect the game more directly
+to the Street Fighter series. This translation preserves the Japanese
+continuity instead, including Kevin Striker, the Parasites, Armored Insects,
+Galaxy Police, and the original terminology and plot structure.
 
-The English script was informed by the translation documented on The Cutting
-Room Floor (TCRF), checked against the Japanese game and original manual/demo
-transcripts, and edited for natural English without intentionally changing the
-original meaning. Kevin's surname follows Capcom's later official English
-rendering, Kevin Striker.
+The script was checked against the Japanese game, the original manual/demo
+transcription, and reference translations, then edited for natural English
+without intentionally changing the original meaning.
 
-RELEASE STATUS
---------------
-v1.01 is a maintenance release built on the fully playtested V12 / RC9 v1.0
-baseline. Gameplay code, renderer fixes, graphics, and all dialogue other than
-the three corrections below are unchanged.
-
-V1.01 SCRIPT CORRECTIONS
-------------------------
+V1.01 CHANGES
+-------------
 - Record 5 restores the explicit "your strength" wording in the Dagobah scene.
-- Record 10 makes Dr. Jose's self-reference unambiguous: "I, Dr. Jose".
+- Record 10 restores Dr. Jose's first-person self-reference: "I, Dr. Jose".
 - Record 20 restores the forceful "I'll test it on your body!" wording.
 
-These changes were checked against the Japanese in-game text and original
-manual transcription. Primary online references used for this maintenance audit:
-
-  https://www.ne.jp/asahi/hzk/kommander/2010top.html
-  https://game.capcom.com/cfn/sfv/column/130987?lang=en
-
-A later V13 / RC10 experiment attempted to combine apostrophes with preceding
-letters to improve contraction spacing. It caused runtime regressions and was
-rejected. The experiment is preserved in the source repository for historical
-reference only and is not part of this release.
+Gameplay code, graphics, renderer behavior, and all other dialogue are unchanged
+from the v1.0 runtime baseline.
 
 FEATURES
 --------
-- Complete English translation of the Japanese Famicom version
+- Complete English translation of the Japanese Famicom release
 - Original Japanese storyline and terminology retained
 - Translated opening story sequence
 - Reworked English dialogue layout and scrolling
 - English quotation marks and punctuation support
 - Cursor and long-dialogue renderer fixes
 - Selected technical fixes from the U.S. release carried back where appropriate
-- Full start-to-finish playtesting of the v1.0 baseline
+- Full start-to-finish playtesting of the v1.0 runtime baseline
 
-PATCH CONTENTS
---------------
-Patch format: BPS
-Patch file: 2010_Street_Fighter_English_Translation_v1.01.bps
+KNOWN RENDERER LIMITATION
+-------------------------
+The game uses a fixed-width tile renderer. An apostrophe occupies a full
+8-pixel character cell; the U.S. release uses the same basic full-cell mechanism
+for contractions. v1.01 keeps the stable implementation, so some apostrophes
+have slightly unusual spacing. This is cosmetic and intentional.
 
-The previous v1.0 patch is retained in the repository for historical
-reproducibility. No ROM image is included.
+PATCH
+-----
+Format: BPS
+File: 2010_Street_Fighter_English_Translation_v1.01.bps
+
+No ROM image is included.
 
 SUPPORTED SOURCE
 ----------------
-Apply the patch to a clean, unmodified copy of the supported Japanese Famicom
-ROM.
-
 Source ROM SHA-256:
 2189de9029ec706edd8b6bbd67d66925fdd363c7d00149fabf113c8fd3cf0e0a
 
@@ -77,33 +63,38 @@ bcaea7f01e331b1027a98dda123b2f23834450a268d9b6611445ef36b12d79d7
 
 PATCHING
 --------
-Use any BPS-compatible patcher, or use the dependency-free Python utility
-included in the repository:
+Use any BPS-compatible patcher, or the included dependency-free Python tool:
 
   python tools/apply_bps.py \
     "Street Fighter 2010 (Japan).nes" \
     release/2010_Street_Fighter_English_Translation_v1.01.bps \
     "2010 Street Fighter (English v1.01).nes"
 
-To validate the supported source and resulting translated ROM:
+Verification:
 
   python tools/verify_release.py "Street Fighter 2010 (Japan).nes"
 
-To reproduce the v1.01 ROM and BPS from the clean source plus the retained v1.0
-baseline patch:
+Deterministic rebuild:
 
   python tools/build_v101.py "Street Fighter 2010 (Japan).nes"
 
-KNOWN QUIRK
------------
-The original text renderer is tile-based and was not designed for English
-contractions. Apostrophes can therefore have slightly unusual spacing. This is
-a cosmetic limitation of the stable V12 / RC9 implementation.
+The rebuild tool uses the retained v1.0 patch as a verified baseline and then
+applies only the three v1.01 dialogue corrections.
+
+SOURCES
+-------
+Japanese manual and demo transcription:
+  https://www.ne.jp/asahi/hzk/kommander/2010top.html
+
+Capcom official English Kevin Striker profile:
+  https://game.capcom.com/cfn/sfv/column/130987?lang=en
+
+Additional translation reference:
+  The Cutting Room Floor (TCRF)
 
 CREDITS
 -------
 Project lead / translation editing / ROM hacking: starlight_world
-Japanese translation reference: The Cutting Room Floor (TCRF)
 Original game: Capcom / Status, 1990
 
 LEGAL
